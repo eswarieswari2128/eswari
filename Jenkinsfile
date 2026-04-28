@@ -9,27 +9,27 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/project.git'
+                git 'https://github.com/eswarieswari2128/eswari.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying Application...'
-                sh 'docker build -t myapp .'
-                sh 'docker run -d -p 8081:8080 myapp'
+                bat 'docker build -t myapp .'
+                bat 'docker run -d -p 8081:8080 myapp'
             }
         }
     }
