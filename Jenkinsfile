@@ -7,12 +7,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/eswarieswari2128/eswari.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 bat 'mvn clean install'
